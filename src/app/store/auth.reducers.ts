@@ -28,7 +28,26 @@ const authFeature = createFeature({
       return {
         ...state,
       };
-    })
+    }),
+
+    on(AuthActions.login, (state) => {
+      return {
+        ...state,
+      };
+    }),
+
+    on(AuthActions.loginSuccess, (state, action) => {
+      return {
+        ...state,
+        user: action.user,
+      };
+    }),
+
+    on(AuthActions.loginFailure, (state, action) => {
+      return {
+        ...state,
+      };
+    }),
   ),
 });
 
